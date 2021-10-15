@@ -1,3 +1,4 @@
+USE test;
 CREATE TABLE IF NOT EXISTS `books_reviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `book_name` varchar(50) NOT NULL,
