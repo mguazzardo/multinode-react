@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get("/api/get")
+    axios.get("http://backend:8080/api/get")
       .then((response) => {
         this.setState({
           fetchData: response.data
@@ -40,7 +40,7 @@ class App extends Component {
   }
 
   submit = () => {
-    axios.post('/api/insert', this.state)
+    axios.post('http://backend:8080/api/insert', this.state)
       .then(() => { alert('success post') })
     console.log(this.state)
     document.location.reload();
@@ -48,13 +48,13 @@ class App extends Component {
 
   delete = (id) => {
     if (confirm("Do you want to delete? ")) {
-      axios.delete(`/api/delete/${id}`)
+      axios.delete(`http://backend:8080/api/delete/${id}`)
       document.location.reload()
     }
   }
 
   edit = (id) => {
-    axios.put(`/api/update/${id}`, this.state)
+    axios.put(`http://backend:8080/api/update/${id}`, this.state)
     document.location.reload();
   }
   render() {
